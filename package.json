@@ -1,0 +1,29 @@
+{
+  "name": "eloquafy",
+  "version": "0.0.0",
+  "private": false,
+  "dependencies": {
+    "psharky": "0.0.0",
+    "querystring": "^0.2.0",
+    "request": "^2.88.0",
+    "url": "^0.11.0"
+  },
+  "description": "## eloquafy",
+  "main": "eloqua.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codechito/eloquafy.git"
+  },
+  "keywords": [
+    "Eloqua"
+  ],
+  "author": "Chito Cascante",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/codechito/eloquafy/issues"
+  },
+  "homepage": "https://github.com/codechito/eloquafy#readme"
+}
