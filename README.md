@@ -80,3 +80,28 @@ client_id and client_secret are from your eloqua registered application details
 authorization is from the query parameters provided by eloqua
 redirect_uri is the endpoint where this code is placed
 
+### Verify Eloqua Request
+
+To verify request from eloqua we submit originalUrl, method, client_id and client_secret, we will receive an array with object status inside.
+
+```
+
+      let verify_options = {
+        "originalUrl": config.serverurl + req.originalUrl,           	                        
+        "method" : req.method,
+        "client_id" : config.client_id,
+        "client_secret" : config.client_secret
+      };
+      let verify = emitter.invokeHook('eloqua::request::verify',verify_options);
+      verify.then(function(verify_res){
+        if(verify_res[0].status){
+          next();
+        }
+        else{
+          res.status(400).json("Oauth Verification failed");
+        }
+      },function(err){
+        res.status(400).json(err);
+      });
+
+```
