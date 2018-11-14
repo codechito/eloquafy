@@ -62,6 +62,9 @@ const sign_request = function(params, request, client_secret){
 
 module.exports = function(emitter){
 
+  if(!emitter){
+    emitter = require('psharky');
+  }
   emitter.registerHook('eloqua::application::enable',function(options){
       return new Promise(function(resolve,reject){
         if(options.install_id && options.redirect_uri && options.client_id){
