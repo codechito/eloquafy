@@ -51,7 +51,6 @@ const sign_request = function(params, request, client_secret){
 
   let base = encodeURIComponent(request.method).replace(/!/g, '%21') + '&' +
   encodeURIComponent(request.baseUrl).replace(/!/g, '%21') + '&' + 
-  encodeURIComponent(request.baseUrl).replace(/!/g, '%21') + '&' + 
   encodeURIComponent(queryfy(params)).replace(/!/g, '%21')
   
   let signingKey = encodeURIComponent(client_secret).replace(/!/g, '%21') + '&';
